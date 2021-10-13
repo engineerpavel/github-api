@@ -5,21 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './app-common/components/header/header.component';
 import {BlocksPageComponent} from './pages/blocks-page/blocks-page.component';
-import {SearchComponent} from './app-common/components/search/search.component';
+import {AppCommonModule} from './app-common/app-common.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BlocksPageComponent,
-    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AppCommonModule
   ],
   providers: [],
-  exports: [BlocksPageComponent, SearchComponent],
+  exports: [BlocksPageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

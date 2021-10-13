@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { DetailPageRoutingModule } from './detail-page-routing.module';
-import { DetailPageComponent } from './detail-page.component';
+import {BlocksPageComponent} from './blocks-page.component';
+import {BlocksPageRoutingModule} from './blocks-page.routing.module';
 import {AppCommonModule} from '../../app-common/app-common.module';
-
 
 @NgModule({
   declarations: [
-    DetailPageComponent,
+    BlocksPageComponent,
   ],
   imports: [
     CommonModule,
-    DetailPageRoutingModule,
+    BlocksPageRoutingModule,
     AppCommonModule
   ]
 })
-export class DetailPageModule { }
+export class BlocksPageModule { }

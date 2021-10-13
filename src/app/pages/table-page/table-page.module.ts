@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { TablePageRoutingModule } from './table-page-routing.module';
 import { TablePageComponent } from './table-page.component';
+import {AppCommonModule} from '../../app-common/app-common.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { TablePageComponent } from './table-page.component';
   ],
   imports: [
     CommonModule,
-    TablePageRoutingModule
+    TablePageRoutingModule,
+    AppCommonModule
   ]
 })
 export class TablePageModule { }
