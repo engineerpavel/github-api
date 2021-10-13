@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-blocks-page',
   templateUrl: './blocks-page.component.html',
   styleUrls: ['./blocks-page.component.less']
 })
-export class BlocksPageComponent implements OnInit {
+export class BlocksPageComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

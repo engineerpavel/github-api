@@ -1,4 +1,4 @@
-@import 'vars';
+@import 'src/app/less/vars';
 .header {
   display: flex;
   align-items: center;
@@ -11,6 +11,10 @@
     color: @whiteColor;
     margin-left: 20px;
     font-weight: 600;
+
+    &.active {
+      text-decoration: underline;
+    }
   }
 
   .btn:first-child {
