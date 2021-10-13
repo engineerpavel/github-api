@@ -1,1 +1,6 @@
-<p>search works!</p>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <div class="search">
+      <input type="text" formControlName="searchInput">
+      <button type="submit">Search</button>
+  </div>
+</form>

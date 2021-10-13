@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.less']
+  styleUrls: ['./search.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
-  constructor() { }
+  @Output()
+  public searchInput = new EventEmitter<string>();
+  public formGroup = new FormGroup({
+    searchInput: new FormControl('')
+  });
 
-  ngOnInit(): void {
+  public onSubmit(): void {
+    this.searchInput.emit(this.formGroup.controls["searchInput"].value);
   }
 
 }
