@@ -1,6 +1,9 @@
-<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()" [formGroup]="formGroup">
   <div class="search">
-      <input type="text" formControlName="searchInput">
-      <button type="submit">Search</button>
+    <div class="input-area">
+      <label for="input">Search repositories by organization name:</label>
+      <input formControlName="searchInput" id="input" type="text">
+    </div>
+    <button type="submit">Search</button>
   </div>
 </form>

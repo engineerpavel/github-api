@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { DetailPageRoutingModule } from './detail-page-routing.module';
-import { DetailPageComponent } from './detail-page.component';
+import {DetailPageRoutingModule} from './detail-page-routing.module';
+import {DetailPageComponent} from './detail-page.component';
 import {AppCommonModule} from '../../app-common/app-common.module';
 
 
 @NgModule({
   declarations: [
-    DetailPageComponent,
+    DetailPageComponent
   ],
   imports: [
     CommonModule,
@@ -16,4 +16,5 @@ import {AppCommonModule} from '../../app-common/app-common.module';
     AppCommonModule
   ]
 })
-export class DetailPageModule { }
+export class DetailPageModule {
+}

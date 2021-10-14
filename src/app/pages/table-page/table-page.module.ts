@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { TablePageRoutingModule } from './table-page-routing.module';
-import { TablePageComponent } from './table-page.component';
+import {TablePageRoutingModule} from './table-page-routing.module';
+import {TablePageComponent} from './table-page.component';
 import {AppCommonModule} from '../../app-common/app-common.module';
 
 
@@ -16,4 +16,5 @@ import {AppCommonModule} from '../../app-common/app-common.module';
     AppCommonModule
   ]
 })
-export class TablePageModule { }
+export class TablePageModule {
+}

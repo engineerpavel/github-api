@@ -1,4 +1,5 @@
-import { Component} from '@angular/core';
+import {Component} from '@angular/core';
+import {GithubSearchService} from '../../app-common/services/github-search.service';
 
 @Component({
   selector: 'app-blocks-page',
@@ -7,5 +8,13 @@ import { Component} from '@angular/core';
 })
 export class BlocksPageComponent {
 
+  constructor(private readonly searchService: GithubSearchService) {
+  }
+
+  public search(searchInput: string): void {
+    this.searchService.getOrganisationRepos(searchInput).subscribe((items) => {
+      console.log(items);
+    })
+  }
 
 }
