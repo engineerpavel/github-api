@@ -1,0 +1,33 @@
+@import "src/app/app-common/less/vars";
+
+.titles {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid @gray;
+  border-radius: 8px 8px 0 0;
+  margin-top: 10px;
+  height: 30px;
+  font-weight: 600;
+}
+.repo-area {
+  display: flex;
+  flex-direction: row;
+  height: 28px;
+}
+
+.repo-area:first-child {
+  margin-top: 10px;
+}
+
+.repo-area:nth-child(odd) {
+  background-color: @darkGray;
+}
+
+.name,
+.language,
+.stars {
+  display: flex;
+  width: 33%;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,29 @@
+@import '../../less/vars';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: @headerColor;
+  height: 62px;
+
+  .btn {
+    color: @whiteColor;
+    margin-left: 20px;
+    font-weight: 600;
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+
+  .btn:first-child {
+    margin-left: 0;
+  }
+
+  .btn:hover {
+    color: @whiteBtnHovered;
+    cursor: pointer;
+  }
+}

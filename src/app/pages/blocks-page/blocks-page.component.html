@@ -1,0 +1,13 @@
+<app-search (searchInput)="search($event)"></app-search>
+<ng-container *ngIf="repos | async">
+  <div class="titles">
+    <div class="name">Name</div>
+    <div class="language">Language</div>
+    <div class="stars">Stars</div>
+  </div>
+  <div class="repo-area" *ngFor="let repo of repos | async">
+    <div class="name">{{repo.name}}</div>
+    <div class="language">{{repo.language}}</div>
+    <div class="stars">{{repo.stargazers_count}}</div>
+  </div>
+</ng-container>
