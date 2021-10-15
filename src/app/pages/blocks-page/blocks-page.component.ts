@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {GithubSearchService} from '../../app-common/services/github-search.service';
 import {Observable} from 'rxjs';
 import {GithubRepoInterface} from '../../app-common/interfaces/github-repo.interface';
-import {shareReplay} from 'rxjs/operators';
+import {mergeMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-blocks-page',
@@ -14,6 +14,9 @@ export class BlocksPageComponent {
   public repos: Observable<GithubRepoInterface[]> = new Observable<GithubRepoInterface[]>();
 
   constructor(private readonly searchService: GithubSearchService) {
+    this.repos = this.searchService.repos.asObservable().pipe(
+      mergeMap((repos) => repos)
+    );
   }
 
   /**
@@ -21,9 +24,7 @@ export class BlocksPageComponent {
    * @param searchInput text from search input
    */
   public search(searchInput: string): void {
-    this.repos = this.searchService.getOrganisationRepos(searchInput).pipe(
-      shareReplay(1)
-    );
+    this.searchService.getOrganisationRepos(searchInput);
   }
 
 }
