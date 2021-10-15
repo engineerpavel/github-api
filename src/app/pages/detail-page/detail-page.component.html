@@ -1,1 +1,18 @@
-<app-search></app-search>
+<ng-container *ngIf="(owner | async) as owner">
+  <h3>User info</h3>
+  <div class="titles">
+    <div class="avatar">Avatar</div>
+    <div class="login">Login</div>
+    <div class="type">User type</div>
+    <div class="url">Profile URL</div>
+  </div>
+  <div class="info-area">
+    <div class="avatar">
+      <img src="{{owner.avatar_url}}">
+    </div>
+    <div class="login">{{owner.login}}</div>
+    <div class="type">{{owner.type}}</div>
+    <a href="{{owner.html_url}}" target="_blank" class="url">Profile URL</a>
+  </div>
+</ng-container>
+

@@ -7,6 +7,7 @@ export interface GithubRepoInterface {
   language: string;
   size: number;
   stargazers_count: number;
+  id: number;
 }
 
 export interface OwnerInterface {

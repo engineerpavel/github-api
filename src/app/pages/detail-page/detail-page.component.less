@@ -1,0 +1,36 @@
+@import "src/app/app-common/less/vars";
+
+.titles {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid @gray;
+  border-radius: 8px 8px 0 0;
+  margin-top: 10px;
+  height: 30px;
+  font-weight: 600;
+}
+
+.info-area {
+  display: flex;
+  flex-direction: row;
+  height: 28px;
+}
+
+.info-area:first-child {
+  margin-top: 10px;
+}
+
+.avatar,
+.login,
+.type,
+.url {
+  display: flex;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 16px;
+  height: 16px;
+}

@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {GithubSearchService} from '../../app-common/services/github-search.service';
 import {Observable} from 'rxjs';
 import {GithubRepoInterface} from '../../app-common/interfaces/github-repo.interface';
-import {mergeMap, shareReplay} from 'rxjs/operators';
+import {mergeMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-blocks-page',

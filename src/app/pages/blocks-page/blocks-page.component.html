@@ -10,6 +10,6 @@
     <div class="name">{{repo.name}}</div>
     <div class="language">{{repo.language}}</div>
     <div class="stars">{{repo.stargazers_count}}</div>
-    <a routerLink="/detail" class="owner">{{repo.owner.login}}</a>
+    <a [routerLink]="['/detail', repo.id]" class="owner">{{repo.owner.login}}</a>
   </div>
 </ng-container>
