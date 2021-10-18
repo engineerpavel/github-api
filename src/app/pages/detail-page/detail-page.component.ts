@@ -20,7 +20,7 @@ export class DetailPageComponent {
     this.owner = activateRoute.params.pipe(
       switchMap((params) => this.searchService.getRepos().pipe(
         map((repos) => {
-          return repos ? repos.filter((repo) => repo.id === params['id'])[0].owner : undefined;
+          return repos && repos.filter((repo) => repo.id === params['id'])? repos[0].owner : undefined;
         })
       )));
   }

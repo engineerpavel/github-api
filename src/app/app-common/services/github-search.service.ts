@@ -30,11 +30,7 @@ export class GithubSearchService {
   public getRepos(): Observable<GithubRepoInterface[] | undefined> {
     return this._repos.pipe(
       switchMap((repos) => repos),
-      shareReplay(1),
-      catchError((err) => {
-        console.log(err);
-        return of(undefined);
-      })
+      shareReplay(1)
     );
   }
 
