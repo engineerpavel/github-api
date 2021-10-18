@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {GithubSearchRepository} from '../repositories/github-search.repository';
-import {Observable, ReplaySubject} from 'rxjs';
+import {Observable, of, ReplaySubject} from 'rxjs';
 import {GithubRepoInterface} from '../interfaces/github-repo.interface';
-import {shareReplay, switchMap} from 'rxjs/operators';
+import {catchError, shareReplay, switchMap} from 'rxjs/operators';
 
 @Injectable()
 export class GithubSearchService {
@@ -27,10 +27,14 @@ export class GithubSearchService {
   /**
    * Get current repos from storage
    */
-  public getRepos(): Observable<GithubRepoInterface[]> {
+  public getRepos(): Observable<GithubRepoInterface[] | undefined> {
     return this._repos.pipe(
       switchMap((repos) => repos),
-      shareReplay(1)
+      shareReplay(1),
+      catchError((err) => {
+        console.log(err);
+        return of(undefined);
+      })
     );
   }
 

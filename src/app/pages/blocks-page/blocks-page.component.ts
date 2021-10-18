@@ -11,7 +11,7 @@ import {GithubRepoInterface} from '../../app-common/interfaces/github-repo.inter
 })
 export class BlocksPageComponent {
 
-  public readonly repos: Observable<GithubRepoInterface[]> = new Observable<GithubRepoInterface[]>();
+  public readonly repos: Observable<GithubRepoInterface[] | undefined> = new Observable<GithubRepoInterface[] | undefined>();
 
   constructor(private readonly searchService: GithubSearchService) {
     this.repos = this.searchService.getRepos();

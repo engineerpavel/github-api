@@ -11,7 +11,7 @@ import {GithubSearchService} from '../../app-common/services/github-search.servi
 })
 export class TablePageComponent {
 
-  public readonly repos: Observable<GithubRepoInterface[]> = new Observable<GithubRepoInterface[]>();
+  public readonly repos: Observable<GithubRepoInterface[] | undefined> = new Observable<GithubRepoInterface[] | undefined>();
 
   constructor(private readonly searchService: GithubSearchService) {
     this.repos = this.searchService.getRepos();

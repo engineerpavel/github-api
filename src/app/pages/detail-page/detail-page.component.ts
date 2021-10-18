@@ -13,15 +13,14 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class DetailPageComponent {
 
-  public owner?: Observable<OwnerInterface> = new Observable<OwnerInterface>();
+  public owner?: Observable<OwnerInterface | undefined> = new Observable<OwnerInterface | undefined>();
 
   constructor(private readonly searchService: GithubSearchService,
               private activateRoute: ActivatedRoute) {
     this.owner = activateRoute.params.pipe(
       switchMap((params) => this.searchService.getRepos().pipe(
         map((repos) => {
-          repos.filter((repo) => repo.id === params['id']);
-          return repos[0]?.owner;
+          return repos ? repos.filter((repo) => repo.id === params['id'])[0].owner : undefined;
         })
       )));
   }
