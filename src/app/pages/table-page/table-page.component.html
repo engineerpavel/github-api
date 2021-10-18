@@ -1,1 +1,19 @@
-<app-search></app-search>
+<app-search (searchInput)="search($event)"></app-search>
+<ng-container *ngIf="repos | async">
+  <table>
+    <tr class="titles">
+      <th class="name">Name</th>
+      <th class="language">Language</th>
+      <th class="stars">Stars</th>
+      <th class="owner">Owner</th>
+    </tr>
+    <ng-container *ngFor="let repo of repos | async | slice:0:20" class="repo-area">
+      <tr>
+        <td>{{repo.name}}</td>
+        <td>{{repo.language}}</td>
+        <td>{{repo.stargazers_count}}</td>
+        <td><a [routerLink]="['/detail', repo.id]" class="owner">{{repo.owner.login}}</a></td>
+      </tr>
+    </ng-container>
+  </table>
+</ng-container>

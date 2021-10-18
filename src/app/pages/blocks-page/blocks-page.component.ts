@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {GithubSearchService} from '../../app-common/services/github-search.service';
 import {Observable} from 'rxjs';
 import {GithubRepoInterface} from '../../app-common/interfaces/github-repo.interface';
@@ -6,7 +6,8 @@ import {GithubRepoInterface} from '../../app-common/interfaces/github-repo.inter
 @Component({
   selector: 'app-blocks-page',
   templateUrl: './blocks-page.component.html',
-  styleUrls: ['./blocks-page.component.less']
+  styleUrls: ['./blocks-page.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BlocksPageComponent {
 
