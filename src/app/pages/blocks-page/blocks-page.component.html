@@ -1,15 +1,17 @@
 <app-search (searchInput)="search($event)"></app-search>
-<ng-container *ngIf="repos | async">
+<ng-container *ngIf="(repos | async) as repos; else notFound">
   <div class="titles">
     <div class="name">Name</div>
     <div class="language">Language</div>
     <div class="stars">Stars</div>
     <div class="owner">Owner</div>
   </div>
-  <div class="repo-area" *ngFor="let repo of repos | async | slice:0:20">
+  <div *ngFor="let repo of repos | slice:0:20" class="repo-area">
     <div class="name">{{repo.name}}</div>
     <div class="language">{{repo.language}}</div>
     <div class="stars">{{repo.stargazers_count}}</div>
     <a [routerLink]="['/detail', repo.id]" class="owner">{{repo.owner.login}}</a>
   </div>
 </ng-container>
+<ng-template #notFound>
+  <div *ngIf="searchBtnClicked">Ничего не найдено</div></ng-template>
