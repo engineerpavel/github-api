@@ -12,6 +12,7 @@ import {GithubRepoInterface} from '../../app-common/interfaces/github-repo.inter
 export class BlocksPageComponent {
 
   public readonly repos: Observable<GithubRepoInterface[] | undefined> = new Observable<GithubRepoInterface[] | undefined>();
+  public searchBtnClicked: boolean = false;
 
   constructor(private readonly searchService: GithubSearchService) {
     this.repos = this.searchService.getRepos();
@@ -23,5 +24,6 @@ export class BlocksPageComponent {
    */
   public search(searchInput: string): void {
     this.searchService.setOrganisationRepos(searchInput);
+    this.searchBtnClicked = true;
   }
 }

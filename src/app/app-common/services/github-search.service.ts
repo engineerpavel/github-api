@@ -11,7 +11,7 @@ export class GithubSearchService {
    * Storage for current search result
    * @private
    */
-  private _repos = new ReplaySubject<Observable<GithubRepoInterface[]>>(1);
+  private _repos = new ReplaySubject<Observable<GithubRepoInterface[] | undefined>>(1);
 
   constructor(private readonly repo: GithubSearchRepository) {
   }
