@@ -24,6 +24,6 @@ export class DetailPageComponent {
           const ownerRepo = repos.filter((repo) => repo.id === params['id']);
           return ownerRepo[0]?.owner;
         })
-    )));
+      )));
   }
 }

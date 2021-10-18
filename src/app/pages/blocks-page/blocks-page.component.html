@@ -6,7 +6,7 @@
     <div class="stars">Stars</div>
     <div class="owner">Owner</div>
   </div>
-  <div class="repo-area" *ngFor="let repo of repos | async | slice:0:20">
+  <div *ngFor="let repo of repos | async | slice:0:20" class="repo-area">
     <div class="name">{{repo.name}}</div>
     <div class="language">{{repo.language}}</div>
     <div class="stars">{{repo.stargazers_count}}</div>

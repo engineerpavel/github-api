@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
 import {GithubSearchService} from '../../app-common/services/github-search.service';
-import {Observable, ReplaySubject} from 'rxjs';
+import {Observable} from 'rxjs';
 import {GithubRepoInterface} from '../../app-common/interfaces/github-repo.interface';
-import {mergeMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-blocks-page',
@@ -24,5 +23,4 @@ export class BlocksPageComponent {
   public search(searchInput: string): void {
     this.searchService.setOrganisationRepos(searchInput);
   }
-
 }
