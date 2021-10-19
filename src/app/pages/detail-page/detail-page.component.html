@@ -1,28 +1,28 @@
 <ng-container *ngIf="(owner | async) as owner">
   <h3>User info</h3>
-    <div class="avatar">
-      <span>Avatar</span>
-      <div class="content">
-        <img src="{{owner.avatar_url}}">
-      </div>
+  <div class="avatar">
+    <span>Avatar</span>
+    <div class="content">
+      <img src="{{owner.avatar_url}}">
     </div>
-    <div class="login">
-      <span>Login</span>
-      <div class="content">
-        {{owner.login}}
-      </div>
+  </div>
+  <div class="login">
+    <span>Login</span>
+    <div class="content">
+      {{owner.login}}
     </div>
-    <div class="type">
-      <span>User type</span>
-      <div class="content">
-        {{owner.type}}
-      </div>
+  </div>
+  <div class="type">
+    <span>User type</span>
+    <div class="content">
+      {{owner.type}}
     </div>
-    <div class="url">
-      <span>Profile URL</span>
-      <div class="content">
-        <a href="{{owner.html_url}}" target="_blank">{{owner.html_url}}</a>
-      </div>
+  </div>
+  <div class="url">
+    <span>Profile URL</span>
+    <div class="content">
+      <a href="{{owner.html_url}}" target="_blank">{{owner.html_url}}</a>
     </div>
+  </div>
 </ng-container>
 
