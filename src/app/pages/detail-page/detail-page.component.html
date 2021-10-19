@@ -1,4 +1,4 @@
-<ng-container *ngIf="(owner | async) as owner">
+<ng-container *ngIf="(owner | async) as owner; else noData">
   <h3>User info</h3>
   <div class="avatar">
     <span>Avatar</span>
@@ -25,4 +25,5 @@
     </div>
   </div>
 </ng-container>
+<ng-template #noData>User information not found</ng-template>
 
