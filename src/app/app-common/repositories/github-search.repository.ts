@@ -17,7 +17,6 @@ export class GithubSearchRepository {
   public getOrganisationRepos(orgName: string): Observable<GithubRepoInterface[] | undefined> {
     return this.http.get<GithubRepoInterface[]>(`${environment.API}/orgs/${orgName}/repos`).pipe(
       catchError((err) => {
-        console.log(err);
         return of(undefined);
       })
     );

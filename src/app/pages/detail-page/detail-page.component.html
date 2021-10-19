@@ -1,18 +1,29 @@
-<ng-container *ngIf="(owner | async) as owner">
+<ng-container *ngIf="(owner | async) as owner; else noData">
   <h3>User info</h3>
-  <div class="titles">
-    <div class="avatar">Avatar</div>
-    <div class="login">Login</div>
-    <div class="type">User type</div>
-    <div class="url">Profile URL</div>
-  </div>
-  <div class="info-area">
-    <div class="avatar">
+  <div class="avatar">
+    <span>Avatar</span>
+    <div class="content">
       <img src="{{owner.avatar_url}}">
     </div>
-    <div class="login">{{owner.login}}</div>
-    <div class="type">{{owner.type}}</div>
-    <a class="url" href="{{owner.html_url}}" target="_blank">Profile URL</a>
+  </div>
+  <div class="login">
+    <span>Login</span>
+    <div class="content">
+      {{owner.login}}
+    </div>
+  </div>
+  <div class="type">
+    <span>User type</span>
+    <div class="content">
+      {{owner.type}}
+    </div>
+  </div>
+  <div class="url">
+    <span>Profile URL</span>
+    <div class="content">
+      <a href="{{owner.html_url}}" target="_blank">{{owner.html_url}}</a>
+    </div>
   </div>
 </ng-container>
+<ng-template #noData>User information not found</ng-template>
 
