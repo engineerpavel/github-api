@@ -1,5 +1,5 @@
 <app-search (searchInput)="search($event)"></app-search>
-<ng-container *ngIf="(repos | async) as repos">
+<ng-container *ngIf="(repos | async) as repos; else notFound">
   <table>
     <tr class="titles">
       <th class="name">Name</th>
@@ -17,3 +17,6 @@
     </ng-container>
   </table>
 </ng-container>
+<ng-template #notFound>
+  <div *ngIf="searchBtnClicked">No repositories found</div>
+</ng-template>

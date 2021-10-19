@@ -12,6 +12,7 @@ import {GithubSearchService} from '../../app-common/services/github-search.servi
 export class TablePageComponent {
 
   public readonly repos: Observable<GithubRepoInterface[] | undefined> = new Observable<GithubRepoInterface[] | undefined>();
+  public searchBtnClicked: boolean = false;
 
   constructor(private readonly searchService: GithubSearchService) {
     this.repos = this.searchService.getRepos();
@@ -23,6 +24,7 @@ export class TablePageComponent {
    */
   public search(searchInput: string): void {
     this.searchService.setOrganisationRepos(searchInput);
+    this.searchBtnClicked = true;
   }
 
 }
