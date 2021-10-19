@@ -21,7 +21,7 @@ export class GithubSearchService {
    * @param orgName organisation name
    */
   public setOrganisationRepos(orgName: string): void {
-    this._repos.next(this.repo.getOrganisationRepos(orgName));
+    this._repos.next(this.repo.getOrganisationRepos(orgName).pipe(shareReplay(1)));
   }
 
   /**
@@ -30,7 +30,6 @@ export class GithubSearchService {
   public getRepos(): Observable<GithubRepoInterface[] | undefined> {
     return this._repos.pipe(
       switchMap((repos) => repos),
-      shareReplay(1)
     );
   }
 
